@@ -1,7 +1,7 @@
 /*
  ============================================================================
- Name        : PARCIAL.c
- Author      : 
+ Name        : PARCIAL I.c
+ Author      : Ornela Ivana Curcio
  Version     :
  Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
