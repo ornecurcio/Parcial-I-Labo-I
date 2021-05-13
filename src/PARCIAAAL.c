@@ -69,12 +69,12 @@ int main(void) {
 					}
 					else
 					{
-						bajacontribuyente(vecContribuyente, buscacontribuyenteById(vecContribuyente, QTY_CONTRIBUYENTE, &auxInt), vecTipo, QTY_TIPO);
-						bajaPublicidadxcontribuyente(vecRecaudacion, QTY_CONTRIBUYENTE, auxInt);
+						bajacontribuyente(vecContribuyente, buscaContribuyenteById(vecContribuyente, QTY_CONTRIBUYENTE, &auxInt));
+						bajaRecaudacionxContribuyente(vecRecaudacion, QTY_RECAUDACION, auxInt);
 					}
 					break;
 				case 4: // ALTA PUBLICIDAD
-					if(contadorcontribuyentes==0)
+					if(contadorContribuyente==0)
 					{
 						printf("Error, primero debe ingresar una contribuyente");
 					}
