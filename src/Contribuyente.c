@@ -192,21 +192,7 @@ int modifica1Contribuyente(eContribuyente aAuxiliar[], int posicion)
 	}
 	return retorno;
 }
-int getDescripcionContribuyente(eTipo aTipo[], int cantidadDeArray, int buscar, char* descripcion)
-{
-	int i;
-	int retorno = -1;
 
-	for(i=0; i<cantidadDeArray; i++)
-	{
-		if(aTipo[i].tipo==buscar && aTipo[i].isEmpty==0)
-		{
-			strcpy(descripcion, aTipo[i].descripcion);
-			retorno=0;
-		}
-	}
-	return retorno;
-}
 /*int ordenarContribuyentes(eContribuyente array[], int cantidadDeArray, int criterio)
 {
 		int flagDesordenado = -1;

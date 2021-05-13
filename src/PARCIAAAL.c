@@ -16,18 +16,19 @@
 
 #define QTY_CONTRIBUYENTE 3
 #define QTY_RECAUDACION 2
-#define QTY_TIPO 2
+#define QTY_TIPO 3
 int main(void) {
 	setbuf(stdout, NULL);
 
 		eTipo vecTipo[QTY_TIPO]={
-				{1, "LCD", 0},
-				{2, "LED", 0},
+				{1, "ARBA", 0},
+				{2, "IIBB", 0},
+				{3, "GANACIAS", 0},
 		};
 		eContribuyente vecContribuyente[QTY_CONTRIBUYENTE];
 		eRecaudacion vecRecaudacion[QTY_RECAUDACION];
 		int contadorContribuyente=1000;
-		int contadorRecaudacion=0;
+		int contadorRecaudacion=100;
 		int submenu;
 		int auxInt;
 		int respuestaMenuPrincipal;
@@ -73,18 +74,18 @@ int main(void) {
 						bajaRecaudacionxContribuyente(vecRecaudacion, QTY_RECAUDACION, auxInt);
 					}
 					break;
-				case 4: // ALTA PUBLICIDAD
+				case 4: // ALTA RECAUDACION
 					if(contadorContribuyente==0)
 					{
 						printf("Error, primero debe ingresar una contribuyente");
 					}
 					else
 					{
-						imprimircontribuyentes(vecContribuyente, QTY_CONTRIBUYENTE, vecTipo, QTY_TIPO);
-						altaPublicidad(vecRecaudacion, QTY_RECAUDACION, vecContribuyente, QTY_CONTRIBUYENTE, &contadorRecaudacion);
+						imprimircontribuyentes(vecContribuyente, QTY_CONTRIBUYENTE);
+						altaRecaudacion(vecRecaudacion, QTY_RECAUDACION, vecContribuyente, QTY_CONTRIBUYENTE, &contadorRecaudacion);
 					}
 					break;
-				case 5://MODIFICA PUBLICIDAD
+				case 5://REFINANCIAR RECAUDACION
 					if(contadorContribuyente==0)
 					{
 						printf("Error, primero debe ingresar una contribuyente");

@@ -37,17 +37,19 @@ int inicializarRecaudacion(eRecaudacion pArray[], int cantidadDeArray);
 * \return int Retorno (-1) si Error, retorna un int de posicion si todo Ok
 */
 int buscaLibreRecaudacion(eRecaudacion pArray[], int cantidadDeArray);
-/** \brief alta un empleado, llama a otras funciones que valida los datos de cada campo a cargar
+/** \brief alta un recaudacion, llama a otras funciones que valida los datos de cada campo a cargar
 * \param aEmployee array donde se cargan los datos
 * \param cantidadDeArray int, recorrer array
 * \param contadorId int como puntero, donde se cargara el ID de manera autoincremental
 * \return int Retorno (-1) si ERROR (0) SI TODO Ok
 */
+int getDescripcionRecaudacion(eTipo aTipo[], int cantidadDeArray, int buscar, char* descripcion);
+
 int altaRecaudacion(eRecaudacion aArray[], int cantidadDeArray, ePantalla aPantalla[], int cantidadPantalla, int* contadorId);
-/** \brief imprime un empleado
-* \param aEmpleado, recibe por valor la estructura de un empleado
+/** \brief imprime un recaudacion
+* \param arecaudacion, recibe por valor la estructura de un recaudacion
 */
-void imprimir1Recaudacion(eRecaudacion aEmpleado);
+void imprimir1Recaudacion(eRecaudacion aRecaudacion);
 
 int imprimirRecaudacion(eRecaudacion array[], int cantidadDeArray);
 

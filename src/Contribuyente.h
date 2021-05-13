@@ -52,8 +52,6 @@ int ordenarContribuyente(eContribuyente array[], int cantidadDeArray, int criter
 
 int modifica1Contribuyente(eContribuyente aAuxiliar[], int posicion, eTipo aTipos[], int cantidadTipos);
 
-int getDescripcionContribuyente(eTipo aTipo[], int cantidadDeArray, int buscar, char* descripcion);
-
 //int eEmployeePromSalario(float* pPromedioResultado, eContribuyente array[], int cantidadDeArray);
 
 //int eEmployeesListaSalario(eContribuyente array[], int cantidadDeArray, float salary);
