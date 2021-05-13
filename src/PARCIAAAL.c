@@ -47,7 +47,7 @@ int main(void) {
 			switch(respuestaMenuPrincipal)
 			{
 				case 1: //ALTA CONTRIBUYENTE
-					if(altaPantalla(vecContribuyente, QTY_CONTRIBUYENTE, &contadorContribuyente)==0)
+					if(altacontribuyente(vecContribuyente, QTY_CONTRIBUYENTE, &contadorContribuyente)==0)
 					{
 						printf("Carga exitosa\n");
 					}
@@ -55,63 +55,63 @@ int main(void) {
 				case 2://MODIFICAR CONTRIBUYENTE
 					if(contadorContribuyente==0)
 					{
-						printf("Error, primero debe ingresar una pantalla");
+						printf("Error, primero debe ingresar una contribuyente");
 					}
 					else
 					{
-						modifica1Pantalla(vecContribuyente, buscaPantallaById(vecContribuyente, QTY_CONTRIBUYENTE,&auxInt), vecTipo, QTY_TIPO);
+						modifica1contribuyente(vecContribuyente, buscaContribuyenteById(vecContribuyente, QTY_CONTRIBUYENTE,&auxInt));
 					}
 					break;
 				case 3://BAJA CONTRIBUYENTE
 					if(contadorContribuyente==0)
 					{
-						printf("Error, primero debe ingresar una pantalla");
+						printf("Error, primero debe ingresar una contribuyente");
 					}
 					else
 					{
-						bajaPantalla(vecContribuyente, buscaPantallaById(vecContribuyente, QTY_CONTRIBUYENTE, &auxInt), vecTipo, QTY_TIPO);
-						bajaPublicidadxPantalla(vecRecaudacion, QTY_CONTRIBUYENTE, auxInt);
+						bajacontribuyente(vecContribuyente, buscacontribuyenteById(vecContribuyente, QTY_CONTRIBUYENTE, &auxInt), vecTipo, QTY_TIPO);
+						bajaPublicidadxcontribuyente(vecRecaudacion, QTY_CONTRIBUYENTE, auxInt);
 					}
 					break;
 				case 4: // ALTA PUBLICIDAD
-					if(contadorPantallas==0)
+					if(contadorcontribuyentes==0)
 					{
-						printf("Error, primero debe ingresar una pantalla");
+						printf("Error, primero debe ingresar una contribuyente");
 					}
 					else
 					{
-						imprimirPantallas(vecContribuyente, QTY_CONTRIBUYENTE, vecTipo, QTY_TIPO);
+						imprimircontribuyentes(vecContribuyente, QTY_CONTRIBUYENTE, vecTipo, QTY_TIPO);
 						altaPublicidad(vecRecaudacion, QTY_RECAUDACION, vecContribuyente, QTY_CONTRIBUYENTE, &contadorRecaudacion);
 					}
 					break;
 				case 5://MODIFICA PUBLICIDAD
 					if(contadorContribuyente==0)
 					{
-						printf("Error, primero debe ingresar una pantalla");
+						printf("Error, primero debe ingresar una contribuyente");
 					}
 					else
 					{
 						buscaPublicidadByCUIT(vecRecaudacion, QTY_RECAUDACION, vecContribuyente, QTY_CONTRIBUYENTE, vecTipo, QTY_TIPO);
-						buscaPublicidadByIdPantalla(vecRecaudacion, QTY_RECAUDACION, &auxInt);
+						buscaPublicidadByIdcontribuyente(vecRecaudacion, QTY_RECAUDACION, &auxInt);
 						modifica1Publicidad(vecRecaudacion, auxInt);
 					}
 					break;
 				case 6: // CANCELA PUBLICDAD
 					if(contadorContribuyente==0)
 					{
-						printf("Error, primero debe ingresar una pantalla");
+						printf("Error, primero debe ingresar una contribuyente");
 					}
 					else
 					{
 						buscaPublicidadByCUIT(vecRecaudacion, QTY_RECAUDACION, vecContribuyente, QTY_CONTRIBUYENTE, vecTipo, QTY_TIPO);
-						buscaPublicidadByIdPantalla(vecRecaudacion, QTY_RECAUDACION, &auxInt);
+						buscaPublicidadByIdcontribuyente(vecRecaudacion, QTY_RECAUDACION, &auxInt);
 						bajaPublicidad(vecRecaudacion, auxInt);
 					}
 					break;
 				case 7: // FACTURACION
 					if(contadorContribuyente==0)
 					{
-						printf("Error, primero debe ingresar una pantalla");
+						printf("Error, primero debe ingresar una contribuyente");
 					}
 					else
 					{
@@ -121,27 +121,27 @@ int main(void) {
 				case 8: // IMPRIME PUBLICIDAD
 					if(contadorContribuyente==0)
 					{
-						printf("Error, primero debe ingresar una pantalla");
+						printf("Error, primero debe ingresar una contribuyente");
 					}
 					else
 					{
 						imprimirPublicidad(vecRecaudacion, QTY_RECAUDACION);
 					}
 					break;
-				case 9: //IMPRIME PANTALLAS
+				case 9: //IMPRIME contribuyenteS
 					if(contadorContribuyente==0)
 					{
-						printf("Error, primero debe ingresar una pantalla");
+						printf("Error, primero debe ingresar una contribuyente");
 					}
 					else
 					{
-						imprimirPantallas(vecContribuyente, QTY_CONTRIBUYENTE, vecTipo, QTY_TIPO);
+						imprimircontribuyentes(vecContribuyente, QTY_CONTRIBUYENTE, vecTipo, QTY_TIPO);
 					}
 					break;
 				case 10: //INFORMES
 					if(contadorContribuyente==0)
 					{
-						printf("Error, primero debe ingresar una pantalla");
+						printf("Error, primero debe ingresar una contribuyente");
 					}
 					else
 					{

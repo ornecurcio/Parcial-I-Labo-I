@@ -151,24 +151,22 @@ int bajaContribuyente(eContribuyente aAuxiliar[], int posicion, eTipo aTipos[], 
 	}
 	return retorno;
 }
-int modifica1Contribuyente(eContribuyente aAuxiliar[], int posicion, eTipo aTipos[], int cantidadTipos)
+int modifica1Contribuyente(eContribuyente aAuxiliar[], int posicion)
 {
 	int retorno = -1;
 	int respuesta;
-	char descripcion[20];
 
-	if(aAuxiliar!=NULL && posicion!=-1 && aTipos!=NULL && cantidadTipos>0)
+	if(aAuxiliar!=NULL && posicion!=-1)
 	{
-		getDescripcionContribuyente(aTipos, cantidadTipos, aAuxiliar[posicion].tipo, descripcion);
-		imprimir1Contribuyente(aAuxiliar[posicion], descripcion);
+		imprimir1Contribuyente(aAuxiliar[posicion]);
 		printf("\n¿Desea modificar esta Contribuyente?");
 		if(utn_getCaracterSN()==0)
 		{
-			printf("\nDesea modificar \n1.Nombre\n2.Tipo\n3.Direccion\n4.Precio");
+			printf("\nDesea modificar \n1.Nombre\n2.Apellido\n3.Cuit");
 			scanf("%d", &respuesta);
-			while(respuesta>4 || respuesta<1)
+			while(respuesta>3 || respuesta<1)
 			{
-				printf("\nDesea modificar \n1.Nombre\n2.Tipo\n3.Direccion\n4.Precio");
+				printf("\nDesea modificar \n1.Nombre\n2.Apellido\n3.Cuit");
 				scanf("%d", &respuesta);
 			}
 			switch(respuesta)
@@ -176,28 +174,17 @@ int modifica1Contribuyente(eContribuyente aAuxiliar[], int posicion, eTipo aTipo
 				case 1:
 					utn_getNombre(aAuxiliar[posicion].name, "Ingrese nombre de Contribuyente", "Error muy largo", 2, TAM);
 					printf("Exito, los nuevos datos son: ");
-					getDescripcionContribuyente(aTipos, cantidadTipos, aAuxiliar[posicion].tipo, descripcion);
-					imprimir1Contribuyente(aAuxiliar[posicion], descripcion);
+					imprimir1Contribuyente(aAuxiliar[posicion]);
 					break;
 				case 2:
-					utn_getNumero(&aAuxiliar[posicion].tipo, "Ingrese 1. LCD, 2.LED", "Ingrese 1. LCD, 2.LED", 1, 2, 2);
+					utn_getNombre(aAuxiliar[posicion].apellido, "Ingrese apellido de Contribuyente", "Error muy largo", 2, TAM);
 					printf("Exito, los nuevos datos son: ");
-					getDescripcionContribuyente(aTipos, cantidadTipos, aAuxiliar[posicion].tipo, descripcion);
-					imprimir1Contribuyente(aAuxiliar[posicion], descripcion);
+					imprimir1Contribuyente(aAuxiliar[posicion]);
 					break;
 				case 3:
-					utn_getNombre(aAuxiliar[posicion].direccion.calle, "Ingrese Calle", "Error muy largo", 2, TAM);
-					utn_getNumero(&aAuxiliar[posicion].direccion.altura, "Ingrese altura", "Error, numero invalido", 1, 9999, 2);
-					utn_getNombre(aAuxiliar[posicion].direccion.localidad, "Ingrese Localidad", "Error muy largo", 2, TAM);
+					utn_getCUIT(aAuxiliar[posicion].cuit, "Ingrese cuit de la forma XX-XXXXXXXX-X", "Error, reingrese", 2);
 					printf("Exito, los nuevos datos son: ");
-					getDescripcionContribuyente(aTipos, cantidadTipos, aAuxiliar[posicion].tipo, descripcion);
-					imprimir1Contribuyente(aAuxiliar[posicion], descripcion);
-					break;
-				case 4:
-					utn_getNumeroFlotante(&aAuxiliar[posicion].precio,"Ingrese precio","Error, ingrese precio entre 200-3000",200,3000,2);
-					printf("Exito, los nuevos datos son: ");
-					getDescripcionContribuyente(aTipos, cantidadTipos, aAuxiliar[posicion].tipo, descripcion);
-					imprimir1Contribuyente(aAuxiliar[posicion], descripcion);
+					imprimir1Contribuyente(aAuxiliar[posicion]);
 					break;
 			}
 			retorno = 0;
