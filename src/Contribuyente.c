@@ -136,7 +136,7 @@ int buscaContribuyenteById(eContribuyente aAuxiliar[], int cantidadDeArray, int*
 int bajaContribuyente(eContribuyente aAuxiliar[], int posicion)
 {
 	int retorno = -1;
-	char descripcion[20];
+
 	if(aAuxiliar!=NULL && posicion!=-1)
 	{
 		imprimir1Contribuyente(aAuxiliar[posicion]);

@@ -52,7 +52,8 @@ int buscaLibreRecaudacion(eRecaudacion pArray[], int cantidadDeArray);
 */
 int getDescripcionRecaudacion(eTipo aTipo[], int cantidadDeArray, int buscar, char* descripcion);
 
-int altaRecaudacion(eRecaudacion aArray[], int cantidadDeArray, ePantalla aPantalla[], int cantidadPantalla, int* contadorId);
+int altaRecaudacion(eRecaudacion aArray[], int cantidadDeArray, eContribuyente aContribuyente[], int cantidadContribuyente, int* contadorId);
+
 /** \brief imprime un recaudacion
 * \param arecaudacion, recibe por valor la estructura de un recaudacion
 */
@@ -62,11 +63,10 @@ int imprimirRecaudacion(eRecaudacion array[], int cantidadDeArray);
 
 int buscaIDRecaudacionRetIDCon(eRecaudacion aAuxiliar[], int cantidadDeArray, int contadorRecauda);
 
-int buscaRecaudacionByCUIT(eRecaudacion aAuxiliar[], int cantidadDeArray, ePantalla aPantalla[], int cantidadPantalla, eTipo aTipo[], int cantidadTipo);
 
 int buscaRecaudacionByIdPantalla(eRecaudacion aAuxiliar[], int cantidadDeArray, int* aID);
 
-//int ordenarRecaudacion(eRecaudacion array[], int cantidadDeArray, int criterio);
+
 
 int modifica1Recaudacion(eRecaudacion aAuxiliar[], int posicion);
 
