@@ -40,7 +40,7 @@ int altaContribuyente(eContribuyente aEmployee[], int cantidadDeArray, int* cont
 /** \brief imprime un empleado
 * \param aEmpleado, recibe por valor la estructura de un empleado
 */
-void imprimir1Contribuyente(eContribuyente aContribuyente, char* descripcion);
+void imprimir1Contribuyente(eContribuyente aContribuyente);
 
 int imprimirContribuyentes(eContribuyente array[], int cantidadDeArray);
 
