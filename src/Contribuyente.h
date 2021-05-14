@@ -44,7 +44,7 @@ void imprimir1Contribuyente(eContribuyente aContribuyente, char* descripcion);
 
 int imprimirContribuyentes(eContribuyente array[], int cantidadDeArray);
 
-int buscaContribuyenteXIdParametro(eContribuyente aAuxiliar[], int cantidadDeArray, int aID)
+int buscaContribuyenteXIdParametro(eContribuyente aAuxiliar[], int cantidadDeArray, int aID);
 
 int buscaContribuyenteById(eContribuyente aAuxiliar[], int cantidadDeArray, int* aID);
 

@@ -118,7 +118,7 @@ int main(void) {
 					}
 					else
 					{
-						facturacionByCUIT(vecClientes, QTY_RECAUDACION, vecContribuyente, QTY_CONTRIBUYENTE);
+
 					}
 					break;
 				case 8: // imprime recaudacion
@@ -137,3 +137,4 @@ int main(void) {
 
 return EXIT_SUCCESS;
 }
+
