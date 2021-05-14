@@ -14,8 +14,8 @@
 #include "Recaudacion.h"
 #include "Contribuyente.h"
 
-#define QTY_CONTRIBUYENTE 3
-#define QTY_RECAUDACION 2
+#define QTY_CONTRIBUYENTE 50
+#define QTY_RECAUDACION 50
 #define QTY_TIPO 3
 
 int main(void) {
