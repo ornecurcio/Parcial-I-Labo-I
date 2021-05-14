@@ -71,7 +71,7 @@ int altaContribuyente(eContribuyente aContribuyente[], int cantidadDeArray, int*
 				   aAuxiliar.idContribuyente=*contadorId;
 				   aAuxiliar.isEmpty=0;
 				   aContribuyente[posicion]=aAuxiliar;
-				   imprimir1Contribuyente(*aContribuyente[posicion]);
+				   imprimir1Contribuyente(aContribuyente[posicion]);
 				   retorno=0;
 				}
 			}
@@ -133,14 +133,13 @@ int buscaContribuyenteById(eContribuyente aAuxiliar[], int cantidadDeArray, int*
 	}
 	return retorno;
 }
-int bajaContribuyente(eContribuyente aAuxiliar[], int posicion, eTipo aTipos[], int cantidadTipos)
+int bajaContribuyente(eContribuyente aAuxiliar[], int posicion)
 {
 	int retorno = -1;
 	char descripcion[20];
 	if(aAuxiliar!=NULL && posicion!=-1)
 	{
-		getDescripcionContribuyente(aTipos, cantidadTipos, aAuxiliar[posicion].tipo, descripcion);
-		imprimir1Contribuyente(aAuxiliar[posicion], descripcion);
+		imprimir1Contribuyente(aAuxiliar[posicion]);
 		printf("\nDesea borrar esta Contribuyente");
 		if(utn_getCaracterSN()==0)
 		{

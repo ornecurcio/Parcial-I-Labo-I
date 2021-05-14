@@ -425,7 +425,6 @@ int esCUIT(char* cadena)// es lo que hay
 {
     int retorno=1;
     int i;
-    int j;
     char buffer[14];
     int contadorDigito;
     int contadorGuion;

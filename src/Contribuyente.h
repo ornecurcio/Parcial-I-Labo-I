@@ -42,15 +42,15 @@ int altaContribuyente(eContribuyente aEmployee[], int cantidadDeArray, int* cont
 */
 void imprimir1Contribuyente(eContribuyente aContribuyente, char* descripcion);
 
-int imprimirContribuyentes(eContribuyente array[], int cantidadDeArray, eTipo aTipos[], int cantidadTipos);
+int imprimirContribuyentes(eContribuyente array[], int cantidadDeArray)
 
 int buscaContribuyenteById(eContribuyente aAuxiliar[], int cantidadDeArray, int* aID);
 
-int bajaContribuyente(eContribuyente aAuxiliar[], int posicion, eTipo aTipos[], int cantidadTipos);
+int bajaContribuyente(eContribuyente aAuxiliar[], int posicion);
 
 int ordenarContribuyente(eContribuyente array[], int cantidadDeArray, int criterio);
 
-int modifica1Contribuyente(eContribuyente aAuxiliar[], int posicion, eTipo aTipos[], int cantidadTipos);
+int modifica1Contribuyente(eContribuyente aAuxiliar[], int posicion);
 
 //int eEmployeePromSalario(float* pPromedioResultado, eContribuyente array[], int cantidadDeArray);
 

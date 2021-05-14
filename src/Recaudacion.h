@@ -12,6 +12,7 @@
 #define SALDADO 0
 #define REFINANCIAR 1
 #define ALTA 2
+
 typedef struct
 {
 	int tipo;
