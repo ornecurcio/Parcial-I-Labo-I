@@ -358,18 +358,18 @@ int listarClientesxCUIT(eRecaudacion aAuxiliar[], int cantidadDeArray, eContribu
 {
 	int retorno=-1;
 	int i;
-	eRecaudacion auxPub;
+	eContribuyente auxPub;
 	if(aAuxiliar!=NULL && cantidadDeArray>0 && aContribuyente!=NULL && cantidadContribuyente>0)
 	{
-		for(i=0; i<cantidadDeArray; i++)
+		for(i=0; i<cantidadContribuyente; i++)
 		{
-			if(aAuxiliar[i].isEmpty==1)
+			if(aContribuyente[i].isEmpty==1)
 			{
 				continue;
 			}
 			else
 			{
-				if(stricmp(aAuxiliar[i].cuil, aAuxiliar[i+1].cuil)>0)
+				if(stricmp(aContribuyente[i].cuit, aContribuyente[i+1].cuit)>0)
 				{
 					auxPub=aAuxiliar[i];
 					aAuxiliar[i]=aAuxiliar[i+1];

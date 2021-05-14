@@ -75,9 +75,6 @@ int bajaRecaudacion(eRecaudacion aAuxiliar[], int posicion);
 int estadoRecaudacionRefinanciar(eRecaudacion aAuxiliar[], int posicion,eTipo aTipo[], int cantidadTipo);
 
 int estadoRecaudacionSaldar(eRecaudacion aAuxiliar[], int posicion,eTipo aTipo[], int cantidadTipo);
-//int eEmployeePromSalario(float* pPromedioResultado, ePantalla array[], int cantidadDeArray);
-
-//int eEmployeesListaSalario(ePantalla array[], int cantidadDeArray, float salary);
 
 int bajaRecaudacionxPantalla(eRecaudacion array[], int cantidadDeArray,int ID);
 

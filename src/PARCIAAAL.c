@@ -128,28 +128,12 @@ int main(void) {
 					}
 					else
 					{
-						imprimirPublicidad(vecRecaudacion, QTY_RECAUDACION);
-					}
-					break;
-				case 9: //IMPRIME contribuyenteS
-					if(contadorContribuyente==0)
-					{
-						printf("Error, primero debe ingresar una contribuyente");
-					}
-					else
-					{
-						imprimircontribuyentes(vecContribuyente, QTY_CONTRIBUYENTE, vecTipo, QTY_TIPO);
-					}
-					break;
-				case 10: //INFORMES
-					if(contadorContribuyente==0)
-					{
-						printf("Error, primero debe ingresar una contribuyente");
+
 					}
 					break;
 			}//fin switch
 		}//fin if menu
-	}while(respuestaMenuPrincipal!=5);
+	}while(respuestaMenuPrincipal!=8);
 
 return EXIT_SUCCESS;
 }
