@@ -7,7 +7,11 @@
 
 #ifndef CONTRIBUYENTE_H_
 #define CONTRIBUYENTE_H_
+
 #include "Contribuyente.h"
+#define SALDADO 0
+#define REFINANCIAR 1
+#define ALTA 2
 typedef struct
 {
 	int tipo;
@@ -22,6 +26,7 @@ typedef struct
 	int tipo;
 	int mes;
 	float importe;
+	int estado;
 	int isEmpty;
 }eRecaudacion;
 
@@ -53,7 +58,7 @@ void imprimir1Recaudacion(eRecaudacion aRecaudacion);
 
 int imprimirRecaudacion(eRecaudacion array[], int cantidadDeArray);
 
-int buscaCUIT(eRecaudacion aAuxiliar[], int cantidadDeArray, char* aCUIT);
+int buscaIDRecaudacionRetIDCon(eRecaudacion aAuxiliar[], int cantidadDeArray, int contadorRecauda);
 
 int buscaRecaudacionByCUIT(eRecaudacion aAuxiliar[], int cantidadDeArray, ePantalla aPantalla[], int cantidadPantalla, eTipo aTipo[], int cantidadTipo);
 
@@ -65,6 +70,9 @@ int modifica1Recaudacion(eRecaudacion aAuxiliar[], int posicion);
 
 int bajaRecaudacion(eRecaudacion aAuxiliar[], int posicion);
 
+int estadoRecaudacionRefinanciar(eRecaudacion aAuxiliar[], int posicion,eTipo aTipo[], int cantidadTipo);
+
+int estadoRecaudacionSaldar(eRecaudacion aAuxiliar[], int posicion,eTipo aTipo[], int cantidadTipo);
 //int eEmployeePromSalario(float* pPromedioResultado, ePantalla array[], int cantidadDeArray);
 
 //int eEmployeesListaSalario(ePantalla array[], int cantidadDeArray, float salary);

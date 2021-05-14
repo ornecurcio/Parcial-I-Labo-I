@@ -24,6 +24,7 @@ int inicializarRecaudacion(eRecaudacion pArray[], int cantidadDeArray)
 	}
 	return retorno;
 }
+
 int buscaLibreRecaudacion(eRecaudacion pArray[], int cantidadDeArray)
 {
 	int retorno = -1;
@@ -100,6 +101,7 @@ int altaRecaudacion(eRecaudacion aArray[], int cantidadDeArray, eContribuyente a
 					{
 					   (*contadorId)++;
 					   aAuxiliar.idRecaudacion=*contadorId;
+					   aAuxiliar.estado=2;
 					   aAuxiliar.isEmpty=0;
 					   aArray[posicion]=aAuxiliar;
 					   imprimir1Recaudacion(aAuxiliar, descripcion);
@@ -142,35 +144,32 @@ int imprimirRecaudacion(eRecaudacion array[], int cantidadDeArray, eTipo aTipo[]
 	}
 	return retorno;
 }
-int buscaCUIT(eRecaudacion aAuxiliar[], int cantidadDeArray, char* aCUIT)
+int buscaIDRecaudacionRetIDCon(eRecaudacion aAuxiliar[], int cantidadDeArray, int contadorRecauda, int* posicion)
 {
 	int retorno = -1;
 	int i;
+	int auxI;
 	int contador=0;
 	//char aCUIT[14];
 
 	if(aAuxiliar!=NULL && cantidadDeArray>0)
 	{
-		utn_getCUIT(aCUIT, "Ingrese CUIT", "Error, ingrese CUIT",2);
-
-		for(i=0; i<cantidadDeArray; i++)
+		printf("Ingrese ID Recaudacion");
+		scanf("%d", &auxI);
+		if(auxI>contadorRecauda || auxI<100)
 		{
-			if((stricmp(aAuxiliar[i].cuil, aCUIT)==0) && aAuxiliar[i].isEmpty==0)
+			printf("Error, no existe ID");
+		}
+		else
+		{
+			for(i=0; i<cantidadDeArray; i++)
 			{
-				contador++;
-				if(contador==1)
+				if(aAuxiliar[i].idRecaudacion==auxI && aAuxiliar[i].isEmpty==0)
 				{
-					retorno = i;
+					*posicion=i;
+					retorno=aAuxiliar[i].idContribuyente;
+					break;
 				}
-				else
-				{
-					retorno = 0;
-				}
-			}
-			else
-			{
-				printf("El numero de CUIT %s no existe", aCUIT);
-				break;
 			}
 		}
 	}
@@ -340,6 +339,40 @@ int bajaRecaudacion(eRecaudacion aAuxiliar[], int posicion)
 		if(utn_getCaracterSN()==0)
 		{
 			aAuxiliar[posicion].isEmpty=1;
+			retorno = 0;
+		}
+	}
+	return retorno;
+}
+int estadoRecaudacionRefinanciar(eRecaudacion aAuxiliar[], int posicion,eTipo aTipo[], int cantidadTipo)
+{
+	int retorno = -1;
+	char descripcion[20];
+	if(aAuxiliar!=NULL && posicion!=-1 && aTipo!=NULL && cantidadTipo>0)
+	{
+		getDescripcionRecaudacion(aTipo, cantidadTipo, aAuxiliar[posicion].tipo, descripcion);
+		imprimir1Recaudacion(aAuxiliar[posicion], descripcion);
+		printf("\n¿Desea refinanciar esta Recaudacion?");
+		if(utn_getCaracterSN()==0)
+		{
+			aAuxiliar[posicion].estado= REFINANCIAR;
+			retorno = 0;
+		}
+	}
+	return retorno;
+}
+int estadoRecaudacionSaldar(eRecaudacion aAuxiliar[], int posicion,eTipo aTipo[], int cantidadTipo)
+{
+	int retorno = -1;
+	char descripcion[20];
+	if(aAuxiliar!=NULL && posicion!=-1 && aTipo!=NULL && cantidadTipo>0)
+	{
+		getDescripcionRecaudacion(aTipo, cantidadTipo, aAuxiliar[posicion].tipo, descripcion);
+		imprimir1Recaudacion(aAuxiliar[posicion], descripcion);
+		printf("\n¿Desea refinanciar esta Recaudacion?");
+		if(utn_getCaracterSN()==0)
+		{
+			aAuxiliar[posicion].estado= SALDADO;
 			retorno = 0;
 		}
 	}

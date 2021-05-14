@@ -192,7 +192,28 @@ int modifica1Contribuyente(eContribuyente aAuxiliar[], int posicion)
 	}
 	return retorno;
 }
-
+int buscaContribuyenteXIdParametro(eContribuyente aAuxiliar[], int cantidadDeArray, int aID)
+{
+	int retorno = -1;
+	int i;
+	if(aAuxiliar!=NULL && cantidadDeArray>0)
+	{
+		for(i=0; i<cantidadDeArray; i++)
+		{
+			if(aAuxiliar[i].idContribuyente==aID && aAuxiliar[i].isEmpty==0)
+			{
+				retorno = i;
+				break;
+			}
+			else
+			{
+				printf("El numero de ID %d no existe", aID);
+				break;
+			}
+		}
+	}
+	return retorno;
+}
 /*int ordenarContribuyentes(eContribuyente array[], int cantidadDeArray, int criterio)
 {
 		int flagDesordenado = -1;

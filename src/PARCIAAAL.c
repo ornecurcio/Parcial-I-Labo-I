@@ -31,6 +31,7 @@ int main(void) {
 		int contadorRecaudacion=100;
 		int submenu;
 		int auxInt;
+		int posicion;
 		int respuestaMenuPrincipal;
 		//float auxFloat;
 
@@ -92,9 +93,9 @@ int main(void) {
 					}
 					else
 					{
-						buscaPublicidadByCUIT(vecRecaudacion, QTY_RECAUDACION, vecContribuyente, QTY_CONTRIBUYENTE, vecTipo, QTY_TIPO);
-						buscaPublicidadByIdcontribuyente(vecRecaudacion, QTY_RECAUDACION, &auxInt);
-						modifica1Publicidad(vecRecaudacion, auxInt);
+						auxInt=buscaIDRecaudacionRetIDCon(vecRecaudacion, QTY_RECAUDACION, contadorRecaudacion, &posicion);
+						imprimir1Contribuyente(vecContribuyente[buscaContribuyenteXIdParametro(vecContribuyente, QTY_CONTRIBUYENTE, auxInt)]);
+						estadoRecaudacionRefinanciar(vecRecaudacion, posicion, vecTipo, QTY_TIPO);
 					}
 					break;
 				case 6: // CANCELA PUBLICDAD
@@ -104,9 +105,9 @@ int main(void) {
 					}
 					else
 					{
-						buscaPublicidadByCUIT(vecRecaudacion, QTY_RECAUDACION, vecContribuyente, QTY_CONTRIBUYENTE, vecTipo, QTY_TIPO);
-						buscaPublicidadByIdcontribuyente(vecRecaudacion, QTY_RECAUDACION, &auxInt);
-						bajaPublicidad(vecRecaudacion, auxInt);
+						auxInt=buscaIDRecaudacionRetIDCon(vecRecaudacion, QTY_RECAUDACION, contadorRecaudacion, &posicion);
+						imprimir1Contribuyente(vecContribuyente[buscaContribuyenteXIdParametro(vecContribuyente, QTY_CONTRIBUYENTE, auxInt)]);
+						estadoRecaudacionSaldar(vecRecaudacion, posicion, vecTipo, QTY_TIPO);
 					}
 					break;
 				case 7: // FACTURACION
