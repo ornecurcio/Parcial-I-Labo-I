@@ -9,6 +9,7 @@
 #define CONTRIBUYENTE_H_
 
 #include "Contribuyente.h"
+
 #define SALDADO 0
 #define REFINANCIAR 1
 #define ALTA 2

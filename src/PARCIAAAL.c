@@ -17,6 +17,7 @@
 #define QTY_CONTRIBUYENTE 3
 #define QTY_RECAUDACION 2
 #define QTY_TIPO 3
+
 int main(void) {
 	setbuf(stdout, NULL);
 
@@ -25,11 +26,11 @@ int main(void) {
 				{2, "IIBB", 0},
 				{3, "GANACIAS", 0},
 		};
+
 		eContribuyente vecContribuyente[QTY_CONTRIBUYENTE];
 		eRecaudacion vecRecaudacion[QTY_RECAUDACION];
 		int contadorContribuyente=1000;
 		int contadorRecaudacion=100;
-		int submenu;
 		int auxInt;
 		int posicion;
 		int respuestaMenuPrincipal;
@@ -110,7 +111,7 @@ int main(void) {
 						estadoRecaudacionSaldar(vecRecaudacion, posicion, vecTipo, QTY_TIPO);
 					}
 					break;
-				case 7: // FACTURACION
+				case 7: // IMprimeContribuyente
 					if(contadorContribuyente==0)
 					{
 						printf("Error, primero debe ingresar una contribuyente");
@@ -120,7 +121,7 @@ int main(void) {
 						facturacionByCUIT(vecClientes, QTY_RECAUDACION, vecContribuyente, QTY_CONTRIBUYENTE);
 					}
 					break;
-				case 8: // IMPRIME PUBLICIDAD
+				case 8: // imprime recaudacion
 					if(contadorContribuyente==0)
 					{
 						printf("Error, primero debe ingresar una contribuyente");
@@ -145,26 +146,10 @@ int main(void) {
 					{
 						printf("Error, primero debe ingresar una contribuyente");
 					}
-					else
-					{
-						do{
-						utn_getNumero(&submenu, "\n1.Lista de Clientes con cantidad de contrataciones e importe a pagar por cada una"
-								"\n2.Cliente con importe mas alto a facturar\n3.Salir", "Error, opcion incorrecta", 1, 3, 2);
-							switch(submenu)
-							{
-							case 1:
-								listarClientesxCUIT(vecRecaudacion, QTY_RECAUDACION, vecContribuyente, QTY_CONTRIBUYENTE);
-								break;
-							case 2:
-								listarClientesxCUIT1(vecRecaudacion, QTY_RECAUDACION, vecContribuyente, QTY_CONTRIBUYENTE);
-								break;
-							}
-						}while(submenu!=3);
-					}
 					break;
-			}
-		}
+			}//fin switch
+		}//fin if menu
 	}while(respuestaMenuPrincipal!=5);
 
-		return EXIT_SUCCESS;
+return EXIT_SUCCESS;
 }

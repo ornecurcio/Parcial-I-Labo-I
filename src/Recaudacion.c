@@ -1,9 +1,4 @@
-/*
- * Recaudacion.c
- *
- *  Created on: 12 may. 2021
- *      Author: orne_
- */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -150,7 +145,7 @@ int buscaIDRecaudacionRetIDCon(eRecaudacion aAuxiliar[], int cantidadDeArray, in
 	int i;
 	int auxI;
 	int contador=0;
-	//char aCUIT[14];
+
 
 	if(aAuxiliar!=NULL && cantidadDeArray>0)
 	{
@@ -249,69 +244,7 @@ int buscaRecaudacionByIdContribuyente(eRecaudacion aAuxiliar[], int cantidadDeAr
 	return retorno;
 }
 
-/*int ordenarRecaudacion(eRecaudacion array[], int cantidadDeArray, int criterio)
-{
-		int flagDesordenado = -1;
-		int i;
-		eContribuyente aux;
-		int retorno=-1;
 
-		if(array!=NULL && cantidadDeArray>0)
-		{
-			do {
-				flagDesordenado=0;
-				for (i = 0; i < cantidadDeArray-1; ++i)
-				{
-					if(criterio == 0)
-					{
-							if(strcmp(array[i].lastName,array[i+1].lastName)>0)
-							{
-								flagDesordenado=1;
-								aux=array[i];
-								array[i]=array[i+1];
-								array[i+1]=aux;
-							}
-							else
-							{
-									if(strcmp(array[i].lastName,array[i+1].lastName)==0 && array[i].sector > array[i+1].sector)
-									{
-										flagDesordenado=1;
-										aux=array[i];
-										array[i]=array[i+1];
-										array[i+1]=aux;
-									}
-							}
-						}
-						else
-						{
-							if(criterio == 1)
-							{
-								if(strcmp(array[i+1].lastName,array[i].lastName)>0)
-								{
-									flagDesordenado=1;
-									aux=array[i];
-									array[i]=array[i+1];
-									array[i+1]=aux;
-								}
-								else
-								{
-									if(strcmp(array[i].lastName,array[i+1].lastName)==0 && array[i+1].sector > array[i].sector)
-									{
-										flagDesordenado=1;
-										aux=array[i];
-										array[i]=array[i+1];
-										array[i+1]=aux;
-									}
-								}
-							}
-						}
-					}
-				} while (flagDesordenado==0);
-				retorno=0;
-		}
-		return retorno;
-}
-*/
 int modifica1Recaudacion(eRecaudacion aAuxiliar[], int posicion)
 {
 	int retorno = -1;
@@ -487,46 +420,4 @@ int listarClientesxCUIT1(eRecaudacion aAuxiliar[], int cantidadDeArray, eContrib
 	}
 	return retorno;
 }
-/*int eContribuyentePromSalario(float* pPromedioResultado, eContribuyente array[], int cantidadDeArray)
-{
-	int retorno = -1;
-	int i;
-	int acumulador=0;
-	int contador=0;
 
-	if(pPromedioResultado != NULL && array!=NULL && cantidadDeArray>0)
-	{
-		for(i=0; i<cantidadDeArray; i++)
-		{
-			if(array[i].isEmpty==0)
-			{
-			acumulador =+ array[i].salary;
-			contador++;
-			}
-		}
-		*pPromedioResultado = acumulador/contador;
-		printf("El salario promedio es: %.2f", *pPromedioResultado);
-		retorno = 0;
-	}
-	return retorno;
-}*/
-/*int eContribuyentesListaSalario(eContribuyente array[], int cantidadDeArray, float salary)
-{
-	int retorno=-1;
-	int i;
-
-	if(array!=NULL && cantidadDeArray>0)
-	{
-		for(i=0; i<cantidadDeArray; i++)
-		{
-			if(array[i].isEmpty==0)
-			{
-				if(array[i].salary>=salary)
-				{
-					imprimir1Employee(array[i]);
-				}
-			}
-		}
-	}
-	return retorno;
-}*/
